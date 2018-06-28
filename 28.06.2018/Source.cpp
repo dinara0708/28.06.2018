@@ -271,6 +271,63 @@ start:
 		cout << endl;
 	}
 	break;
+	case 12:
+	{
+		int i = 303; //действительны в диапозоне от 0 до 255, потом будут срезаться - введеное число %256 и смотрит по остатку!
+		cout << char(i) << endl;
+		char c = 'Z';
+		cout << (int)c << endl; //сказали компу вывести эту переменную в численном значении
+	}
+	break;
+	case 13:
+	{
+		for (int i = 0; i < 256; i++)
+		{
+			cout << i << " " << char(i) << endl;
+		}
+	}
+	break;
+	case 14:
+	{
+		int n;
+		cin >> n;
+		int sum = 0;
+		while (n != 0)
+		{
+			sum = sum * 10 + n % 10;
+			n /= 10;
+		}
+		cout << sum*5 << endl; //cout << sum*5 << endl; - выводит число наоборот в пятикратном размере например
+	}
+	break;
+	case 15:
+	{
+		int n;
+		cin >> n;
+		int i = 1;
+		int x = 0;
+		while (i < n)
+		{
+			if (n%i == 0) cout << i << endl;;
+			i++;
+		}
+		cout << endl;
+	}
+	break;
+	case 16:
+	{
+		char c;
+		int k = 0, i=0, j=0, n=0;
+		while (cin.get(c))
+		{
+			if (c == ' ') k++;
+			else if (isdigit(c)) i++;
+			else if (isalpha(c)) j++;
+			else n++;
+		}
+		cout << "пробелов: " << k << "\tцифр: " << i << "\tбукв: " << j << "\tдругих символов: " << n-2 << endl;  //ctrl Z - выход из консольного ввода
+	}
+	break;
 	default:
 		printf("\nerror: no tasks\n\n");
 	}
